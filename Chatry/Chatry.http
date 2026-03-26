@@ -1,0 +1,29 @@
+@root_URL = http://localhost:5235
+
+GET {{root_URL}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{root_URL}}/api/Users/User_List
+Accept: application/json
+
+###
+
+POST {{root_URL}}/api/Users/User_ADD
+Content-Type: application/json
+{
+  "username" : "Felix" ,
+  "password" : "asd"
+}
+
+###
+
+POST {{root_URL}}/api/Users/User_Login
+Content-Type: application/json
+{
+  "username" : "Aga" ,
+  "password" : "asd"
+}
+
+###
