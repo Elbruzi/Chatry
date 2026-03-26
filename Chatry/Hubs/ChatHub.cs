@@ -7,13 +7,6 @@ namespace Chatry.Hubs
     public class ChatHub : Hub
     {
 
-        private readonly IHubContext<ChatHub> _hub;
-
-        public ChatHub(IHubContext<ChatHub> hub)
-        {
-            _hub = hub; 
-        }
-
         public async Task SendMessage(string message)
         {
             var Username = Context.User?.Identity?.Name;
