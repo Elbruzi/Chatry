@@ -12,14 +12,19 @@ namespace Chatry.Services
     {
 
         private readonly IConfiguration _configuration;
+        private readonly ChatryDbContext _context;
 
-        public JwtService(IConfiguration configuration)
+
+        public JwtService(IConfiguration configuration , ChatryDbContext context)
         {
             _configuration = configuration;
+            _context = context;
         }
 
         public LoginResponseModel Authenticate(LoginRequestModel request)
         {
+            
+            var user = _context.Users.FirstOrDefault(u => u.Username == request.Username);
 
             // 4. Konfigürasyondan JWT ayarlarını oku
             var issuer = _configuration["JwtConfig:Issuer"];
@@ -30,19 +35,22 @@ namespace Chatry.Services
             // 5. Token bitiş zamanını hesapla
             var tokenExpiryTimeStamp = DateTime.UtcNow.AddMinutes(tokenValidityMins);
 
+
             // 6. Token içeriğini ve imzalama yöntemini tanımla
             var tokenDescriptor = new SecurityTokenDescriptor
             {
+
                 Subject = new ClaimsIdentity(new[]
                 {
-            new Claim(ClaimTypes.Name , request.Username)
+            new Claim(ClaimTypes.Name , user.Username),
+            new Claim(ClaimTypes.NameIdentifier , user.UserID.ToString())
         }),
                 Expires = tokenExpiryTimeStamp,
                 Issuer = issuer,
                 Audience = audience,
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)),
-                    SecurityAlgorithms.HmacSha512Signature),
+                    SecurityAlgorithms.HmacSha256Signature),
             };
 
             // 7. Token'ı oluştur ve string'e dönüştür

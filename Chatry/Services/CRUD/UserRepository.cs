@@ -30,7 +30,7 @@ namespace Chatry.Services.CRUD
             try
             {
                 user.Password = Hasher.Hash(user.Password);
-                await _context.Users.AddAsync(user);
+                _context.Users.Add(user);
                 await _context.SaveChangesAsync();
                 return Enum_Results.Successful;
             }
@@ -67,6 +67,9 @@ namespace Chatry.Services.CRUD
                 return Enum_Results.DB_Error;
             }
         }
+
+
+
     }
 
 }

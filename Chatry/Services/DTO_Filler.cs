@@ -15,12 +15,12 @@ namespace Chatry.Services
         {
             _context = context;
         }
-
+        
         public async Task<List<User_DTO_F>> Get_Users_F() 
         {
-            var Usernames = await _context.Users.Select(_01_Mapping.User_DTO_F).ToListAsync();
+            var Users  = await _context.Users.Select(_01_Mapping.User_DTO_F).ToListAsync();
 
-            return (Usernames);
+            return (Users);
         }
 
     }

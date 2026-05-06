@@ -47,6 +47,23 @@ namespace Chatry.Migrations
                     b.ToTable("Messages");
                 });
 
+            modelBuilder.Entity("Chatry.Models.Rooms", b =>
+                {
+                    b.Property<int>("RoomID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoomID"));
+
+                    b.Property<string>("RoomName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("RoomID");
+
+                    b.ToTable("Rooms");
+                });
+
             modelBuilder.Entity("Chatry.Models.User", b =>
                 {
                     b.Property<int>("UserID")

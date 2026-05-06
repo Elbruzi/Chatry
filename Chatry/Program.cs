@@ -18,6 +18,9 @@ builder.Services.AddScoped<ICrudRepository<User>, UserRepository>();
 
 builder.Services.AddScoped<JwtService>();
 
+builder.Services.AddScoped<RoomRepository>();
+
+
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>

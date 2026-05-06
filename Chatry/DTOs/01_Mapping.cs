@@ -8,7 +8,9 @@ namespace Chatry.DTOs
 
         public static Expression<Func<User, User_DTO_F>> User_DTO_F => u => new User_DTO_F 
         {
-            Username = u.Username
+            Username = u.Username,
+
+            UserID = u.UserID
         };
 
     }

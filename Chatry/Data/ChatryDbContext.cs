@@ -23,6 +23,8 @@ namespace Chatry.Data
 
         public DbSet<User> Users { get; set; }
 
+        public DbSet<Rooms> Rooms { get; set; }
+
         public DbSet<Message> Messages { get; set; }
 
     }
