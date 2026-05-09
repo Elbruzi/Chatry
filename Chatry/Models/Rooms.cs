@@ -11,5 +11,7 @@ namespace Chatry.Models
 
         public string RoomName { get; set; }
 
+        public int FriendStatus { get; set; } = 0;
+
     }
 }

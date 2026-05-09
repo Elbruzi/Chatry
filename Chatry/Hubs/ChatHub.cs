@@ -20,7 +20,7 @@ namespace Chatry.Hubs
         {
             string? JwtID = Context.UserIdentifier;
 
-            if (AuthAndLegit(RequestedRoom, JwtID))
+            if (AuthHelper(RequestedRoom, JwtID))
             {
                 if (await roomRepository.Exists(RequestedRoom))
                 {
@@ -55,7 +55,7 @@ namespace Chatry.Hubs
             await Clients.All.SendAsync("ReceiveMessage", Username, message);
         }
 
-        public static bool AuthAndLegit(string RequestedRoom, string JwtID)
+        public static bool AuthHelper(string RequestedRoom, string JwtID)
         {
             if (string.IsNullOrWhiteSpace(RequestedRoom) || !RequestedRoom.Contains('-'))
             {

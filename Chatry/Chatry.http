@@ -27,3 +27,12 @@ Content-Type: application/json
 }
 
 ###
+
+POST {{root_URL}}/api/Rooms/
+Content-Type: application/json
+{
+  "username" : "Aga" ,
+  "password" : "asd"
+}
+
+###

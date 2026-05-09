@@ -20,6 +20,7 @@ builder.Services.AddScoped<JwtService>();
 
 builder.Services.AddScoped<RoomRepository>();
 
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddCors(options =>
 {

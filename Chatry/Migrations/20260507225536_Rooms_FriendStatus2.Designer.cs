@@ -3,6 +3,7 @@ using Chatry.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Chatry.Migrations
 {
     [DbContext(typeof(ChatryDbContext))]
-    partial class ChatryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260507225536_Rooms_FriendStatus2")]
+    partial class Rooms_FriendStatus2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

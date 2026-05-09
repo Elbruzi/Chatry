@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Chatry.Data;
 using Chatry.Models;
+using Microsoft.AspNetCore.Authorization;
+using Chatry.Services.CRUD;
 
 namespace Chatry.Controllers
 {
@@ -14,22 +16,21 @@ namespace Chatry.Controllers
     [ApiController]
     public class RoomsController : ControllerBase
     {
-        private readonly ChatryDbContext _context;
 
-        public RoomsController(ChatryDbContext context)
+        private readonly RoomRepository _RoomRepository;
+
+        public RoomsController(RoomRepository roomRepository)
         {
-            _context = context;
+
+            _RoomRepository = roomRepository;
         }
 
-
-
-
-
-
-
-
-
-
+        [Authorize]
+        [HttpPut]
+        public async Task<ActionResult> FriendAddRemove(string IDs)
+        {
+            return Ok(_RoomRepository.FriendAddRemove(IDs));
+        }
 
     }
 }
