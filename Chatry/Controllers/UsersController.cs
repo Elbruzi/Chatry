@@ -2,12 +2,13 @@
 using Chatry.Models;
 using Chatry.DTOs.Jwt;
 using Chatry.Services;
-using Chatry.Services.CRUD;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.AspNetCore.Authorization;
+using System.Xml;
+using Chatry.Services.Repositories;
 
 
 namespace Chatry.Controllers
@@ -18,10 +19,10 @@ namespace Chatry.Controllers
     {
  
         private readonly DTO_Filler _DTO_Filler;
-        private readonly ICrudRepository<User> _User_repository;
+        private readonly UserRepository _User_repository;
         private readonly JwtService _JwtService;
 
-        public UsersController(DTO_Filler dTO_Filler, ICrudRepository<User> User_reposityory , JwtService jwtService)
+        public UsersController(DTO_Filler dTO_Filler, UserRepository User_reposityory , JwtService jwtService)
         {
             _DTO_Filler = dTO_Filler;
             _User_repository = User_reposityory;
@@ -48,8 +49,17 @@ namespace Chatry.Controllers
 
 
         [HttpPost("User_ADD")]
-        public async Task<ActionResult> Async_ADD(User user)
+        public async Task<ActionResult> Async_ADD(LoginRequestModel loginRequestModel)
         {
+            if (string.IsNullOrWhiteSpace(loginRequestModel.Username)&&string.IsNullOrWhiteSpace(loginRequestModel.Password))
+            {
+                return StatusCode(StatusCodes.Status406NotAcceptable);
+            }
+            var user = new User
+            {
+                Username = loginRequestModel.Username,
+                Password = loginRequestModel.Password
+            };
             var response = await _User_repository.Async_ADD(user);
             switch (response)
             {
@@ -64,7 +74,7 @@ namespace Chatry.Controllers
 
                     return Ok(tokenResponse);
 
-                case Enum_Results.Param_Null:
+                case (Enum_Results.Param_Null or Enum_Results.BREAK):
                     return StatusCode(StatusCodes.Status406NotAcceptable);
 
                 case Enum_Results.DB_Error:
@@ -78,23 +88,29 @@ namespace Chatry.Controllers
 
 
         [HttpPost("User_Login")]
-        public async Task<ActionResult> User_login(User user)
+        public async Task<ActionResult> User_login(LoginRequestModel loginRequestModel)
         {
-            var response = await _User_repository.User_is_Exists(user);
+            var user = new User
+            {
+                Username = loginRequestModel.Username,
+                Password = loginRequestModel.Password
+            };
+            var (response,userid) = await _User_repository.User_is_Exists_ReturnsID(user);
             switch (response)
             {
                 case Enum_Results.Successful:
                     var LoginRequest = new LoginRequestModel
                     {
-                        Username = user.Username ,
+                        UserID = userid.ToString(),
+                        Username = user.Username,
                         Password = user.Password
                     };
 
-                    var tokenResponse =  _JwtService.Authenticate(LoginRequest);
+                    var tokenResponse = _JwtService.Authenticate(LoginRequest);
 
                     return Ok(tokenResponse);
 
-                case Enum_Results.Param_Null:
+                case (Enum_Results.Param_Null or Enum_Results.BREAK):
                     return StatusCode(StatusCodes.Status406NotAcceptable);
 
                 case Enum_Results.DB_Error:

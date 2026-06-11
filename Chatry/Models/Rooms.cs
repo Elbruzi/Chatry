@@ -13,5 +13,6 @@ namespace Chatry.Models
 
         public int FriendStatus { get; set; } = 0;
 
+        public ICollection<RoomUser> RoomUsers { get; set; } = new List<RoomUser>();
     }
 }

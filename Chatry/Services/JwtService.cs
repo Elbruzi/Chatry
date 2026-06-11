@@ -24,7 +24,6 @@ namespace Chatry.Services
         public LoginResponseModel Authenticate(LoginRequestModel request)
         {
             
-            var user = _context.Users.FirstOrDefault(u => u.Username == request.Username);
 
             // 4. Konfigürasyondan JWT ayarlarını oku
             var issuer = _configuration["JwtConfig:Issuer"];
@@ -42,8 +41,8 @@ namespace Chatry.Services
 
                 Subject = new ClaimsIdentity(new[]
                 {
-            new Claim(ClaimTypes.Name , user.Username),
-            new Claim(ClaimTypes.NameIdentifier , user.UserID.ToString())
+            new Claim(ClaimTypes.Name , request.Username),
+            new Claim(ClaimTypes.NameIdentifier , request.UserID.ToString())
         }),
                 Expires = tokenExpiryTimeStamp,
                 Issuer = issuer,

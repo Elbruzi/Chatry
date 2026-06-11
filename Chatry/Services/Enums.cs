@@ -6,6 +6,8 @@
             Unsuccessful,
             DB_Error,
             Param_Null,
-            Method_Error
+            Method_Error,
+            Silent,
+            BREAK
         }
 }

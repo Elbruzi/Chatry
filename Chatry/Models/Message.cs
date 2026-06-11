@@ -8,21 +8,29 @@ namespace Chatry.Models
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int MessageID { get; set; }
+        public  int MessageID { get; set; }
+
+        [Required]
+        public required int RoomID { get; set; }
 
 
         [Required]
-        public int UserID { get; set; }
+        public required int UserID { get; set; }
 
 
         [MaxLength(10000)]
         public required string Text { get; set; }
 
+        [Required]
+        public required DateTime TimeStamp { get; set; } = DateTime.UtcNow;
 
-        public bool Active { get; set; }
+        [Required]
+        public required bool Active { get; set; } = true;
 
-       
-        public required User User { get; set; }
+        public  User User { get; set; }
+
+        public  Rooms Room{ get; set; }
+
 
     }
 }

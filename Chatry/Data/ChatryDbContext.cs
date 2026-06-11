@@ -19,6 +19,9 @@ namespace Chatry.Data
             modelBuilder.Entity<User>()
                 .HasIndex(x => x.Username)
                 .IsUnique();
+
+            modelBuilder.Entity<RoomUser>()
+            .HasKey(ru => new { ru.UserID, ru.RoomID });
         }
 
         public DbSet<User> Users { get; set; }
@@ -27,5 +30,7 @@ namespace Chatry.Data
 
         public DbSet<Message> Messages { get; set; }
 
+        public DbSet<RoomUser> RoomUsers { get; set; }
+        
     }
 }

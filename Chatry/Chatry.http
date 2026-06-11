@@ -1,11 +1,19 @@
 @root_URL = http://localhost:5235
 
+
+
 GET {{root_URL}}/weatherforecast/
 Accept: application/json
 
 ###
 
 GET {{root_URL}}/api/Users/User_List
+Accept: application/json
+
+###
+
+
+GET {{root_URL}}/api/Rooms/FriendList
 Accept: application/json
 
 ###
@@ -19,20 +27,24 @@ Content-Type: application/json
 
 ###
 
+# @name login
 POST {{root_URL}}/api/Users/User_Login
 Content-Type: application/json
 {
-  "username" : "Aga" ,
-  "password" : "asd"
+  "username" : "Merhaba" ,
+  "password" : "Merhaba"
 }
 
 ###
 
-POST {{root_URL}}/api/Rooms/
+# 2. Üstteki istekten dönen token'ý otomatik deðiþkene atýyoruz
+@token = "accesToken": eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1lcmhhYmEiLCJuYW1laWQiOiIxMzUiLCJuYmYiOjE3NzgzMzI3NzAsImV4cCI6MTc3ODMzNDU3MCwiaWF0IjoxNzc4MzMyNzcwLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MjY4LyIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcyNjgifQ.sCmEDlo7uVBy_JOjD5MWw0iIff8T7qkl9MD91r82v_s
+
+POST {{root_URL}}/api/Rooms/FriendAddRemove
+Authorization: Bearer {{token}}
 Content-Type: application/json
 {
-  "username" : "Aga" ,
-  "password" : "asd"
+  "IDs" : "135-139"
 }
 
 ###

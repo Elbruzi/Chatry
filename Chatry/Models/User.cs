@@ -19,5 +19,7 @@ namespace Chatry.Models
 
         public ICollection<Message> Messages { get; set; } = new List<Message>();
 
+        public ICollection<RoomUser> RoomUsers { get; set; } = new List<RoomUser>();
+
     }
 }

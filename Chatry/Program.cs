@@ -2,7 +2,7 @@ using Chatry.Data;
 using Chatry.Hubs;
 using Chatry.Models;
 using Chatry.Services;
-using Chatry.Services.CRUD;
+using Chatry.Services.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -14,11 +14,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<DTO_Filler>();
 
-builder.Services.AddScoped<ICrudRepository<User>, UserRepository>();
+builder.Services.AddScoped<UserRepository>();
 
 builder.Services.AddScoped<JwtService>();
 
 builder.Services.AddScoped<RoomRepository>();
+
+builder.Services.AddScoped<MessagesRepository>();
+
+builder.Services.AddScoped<Chatry.Services.HttpContext>();
+
 
 builder.Services.AddHttpContextAccessor();
 
