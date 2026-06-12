@@ -1,40 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|c:\\users\\elbruz\\source\\repos\\chatry\\chatry\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|solutionrelative:chatry\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|c:\\users\\elbruz\\source\\repos\\chatry\\chatry\\services\\httpcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|solutionrelative:chatry\\services\\httpcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|c:\\users\\elbruz\\source\\repos\\chatry\\chatry\\services\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|solutionrelative:chatry\\services\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|c:\\users\\elbruz\\source\\repos\\chatry\\chatry\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|solutionrelative:chatry\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|c:\\users\\elbruz\\source\\repos\\chatry\\chatry\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|solutionrelative:chatry\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|c:\\users\\elbruz\\source\\repos\\chatry\\chatry\\controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|solutionrelative:chatry\\controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|c:\\users\\elbruz\\source\\repos\\chatry\\chatry\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|solutionrelative:chatry\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|c:\\users\\elbruz\\source\\repos\\chatry\\chatry\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D9CE48-5B16-4635-BB20-86CD06542C52}|Chatry\\Chatry.csproj|solutionrelative:chatry\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -42,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,110 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HttpContext.cs",
-              "DocumentMoniker": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Services\\HttpContext.cs",
-              "RelativeDocumentMoniker": "Chatry\\Services\\HttpContext.cs",
-              "ToolTip": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Services\\HttpContext.cs",
-              "RelativeToolTip": "Chatry\\Services\\HttpContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T20:38:57.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Program.cs",
-              "RelativeDocumentMoniker": "Chatry\\Program.cs",
-              "ToolTip": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Program.cs",
-              "RelativeToolTip": "Chatry\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T20:37:47.935Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Services\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Chatry\\Services\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Services\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "Chatry\\Services\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAwwGYAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T18:05:10.245Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "JwtService.cs",
-              "DocumentMoniker": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Services\\JwtService.cs",
-              "RelativeDocumentMoniker": "Chatry\\Services\\JwtService.cs",
-              "ToolTip": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Services\\JwtService.cs",
-              "RelativeToolTip": "Chatry\\Services\\JwtService.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAIwCkAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T18:02:20.452Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ChatHub.cs",
-              "DocumentMoniker": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Hubs\\ChatHub.cs",
-              "RelativeDocumentMoniker": "Chatry\\Hubs\\ChatHub.cs",
-              "ToolTip": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Hubs\\ChatHub.cs",
-              "RelativeToolTip": "Chatry\\Hubs\\ChatHub.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAowB0AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T17:35:22.25Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "Chatry\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "Chatry\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAwwGwAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T12:54:38.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RoomsController.cs",
-              "DocumentMoniker": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Controllers\\RoomsController.cs",
-              "RelativeDocumentMoniker": "Chatry\\Controllers\\RoomsController.cs",
-              "ToolTip": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Controllers\\RoomsController.cs",
-              "RelativeToolTip": "Chatry\\Controllers\\RoomsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T12:54:38.359Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MessagesController.cs",
-              "DocumentMoniker": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Controllers\\MessagesController.cs",
-              "RelativeDocumentMoniker": "Chatry\\Controllers\\MessagesController.cs",
-              "ToolTip": "C:\\Users\\Elbruz\\source\\repos\\Chatry\\Chatry\\Controllers\\MessagesController.cs",
-              "RelativeToolTip": "Chatry\\Controllers\\MessagesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T12:54:37.914Z",
-              "EditorCaption": ""
             }
           ]
         }

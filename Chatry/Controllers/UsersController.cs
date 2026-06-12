@@ -51,7 +51,7 @@ namespace Chatry.Controllers
         [HttpPost("User_ADD")]
         public async Task<ActionResult> Async_ADD(LoginRequestModel loginRequestModel)
         {
-            if (string.IsNullOrWhiteSpace(loginRequestModel.Username)&&string.IsNullOrWhiteSpace(loginRequestModel.Password))
+            if (string.IsNullOrWhiteSpace(loginRequestModel.Username) || string.IsNullOrWhiteSpace(loginRequestModel.Password))
             {
                 return StatusCode(StatusCodes.Status406NotAcceptable);
             }
