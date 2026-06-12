@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Chatry.Migrations
 {
     [DbContext(typeof(ChatryDbContext))]
-    [Migration("20260610194309_NP_fixed")]
-    partial class NP_fixed
+    [Migration("20260612124137_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
