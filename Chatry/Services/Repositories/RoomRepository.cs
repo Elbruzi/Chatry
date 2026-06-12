@@ -14,9 +14,9 @@ namespace Chatry.Services.Repositories
 
         private readonly ILogger<RoomRepository> _logger;
 
-        private readonly HttpContext _httpContext;
+        private readonly ChatryHttpContext _httpContext;
 
-        public RoomRepository(ChatryDbContext chatryDbContext, ILogger<RoomRepository> logger , HttpContext httpContext)
+        public RoomRepository(ChatryDbContext chatryDbContext, ILogger<RoomRepository> logger , ChatryHttpContext httpContext)
         {
             _context = chatryDbContext;
 

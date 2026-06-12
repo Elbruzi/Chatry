@@ -22,7 +22,7 @@ builder.Services.AddScoped<RoomRepository>();
 
 builder.Services.AddScoped<MessagesRepository>();
 
-builder.Services.AddScoped<Chatry.Services.HttpContext>();
+builder.Services.AddScoped<Chatry.Services.ChatryHttpContext>();
 
 
 builder.Services.AddHttpContextAccessor();

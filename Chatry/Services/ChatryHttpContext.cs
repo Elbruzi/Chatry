@@ -2,15 +2,15 @@
 
 namespace Chatry.Services
 {
-    public class HttpContext
+    public class ChatryHttpContext
     {
 
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        private readonly ILogger<HttpContext> _logger;
+        private readonly ILogger<ChatryHttpContext> _logger;
 
 
-        public HttpContext(IHttpContextAccessor httpContextAccessor, ILogger<HttpContext> logger)
+        public ChatryHttpContext(IHttpContextAccessor httpContextAccessor, ILogger<ChatryHttpContext> logger)
         {
             _httpContextAccessor = httpContextAccessor;
 

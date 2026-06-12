@@ -14,7 +14,7 @@ namespace Chatry.Services.Repositories
         private readonly ILogger<MessagesRepository> _logger;
 
 
-        public MessagesRepository(ChatryDbContext chatryDbContext, HttpContext httpContext, IServiceScopeFactory serviceScopeFactory , ILogger<MessagesRepository> logger)
+        public MessagesRepository(ChatryDbContext chatryDbContext , IServiceScopeFactory serviceScopeFactory , ILogger<MessagesRepository> logger)
         {
             _context = chatryDbContext;
 

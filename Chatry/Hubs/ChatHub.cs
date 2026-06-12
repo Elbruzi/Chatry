@@ -18,7 +18,7 @@ namespace Chatry.Hubs
 
         private readonly RoomRepository roomRepository;
 
-        public ChatHub(RoomRepository _roomRepository , IServiceScopeFactory serviceScopeFactory)
+        public ChatHub(RoomRepository _roomRepository, IServiceScopeFactory serviceScopeFactory)
         {
             roomRepository = _roomRepository;
 
@@ -30,12 +30,12 @@ namespace Chatry.Hubs
             string? JwtID = Context.UserIdentifier;
             if (JwtID == null)
             {
-                return;   
+                return;
             }
 
             if (AuthHelper(RequestedRoom, JwtID))
             {
-                var (boolen,State) = await roomRepository.Exists(RequestedRoom);
+                var (boolen, State) = await roomRepository.Exists(RequestedRoom);
                 if (State == Enum_Results.BREAK)
                 {
                     return;
@@ -46,7 +46,7 @@ namespace Chatry.Hubs
                 }
                 else
                 {
-                    await roomRepository.CreateRoom(RequestedRoom,JwtID);
+                    await roomRepository.CreateRoom(RequestedRoom, JwtID);
                     await Groups.AddToGroupAsync(Context.ConnectionId, RequestedRoom);
                 }
                 await Clients.Group(RequestedRoom).SendAsync("UserJoined", JwtID);
@@ -56,7 +56,7 @@ namespace Chatry.Hubs
         public async Task SendMessageRoom(string RequestedRoom, string message)
         {
             string? JwtID = Context.UserIdentifier;
-            var (userID , State)= Helpers.ToInt(JwtID);
+            var (userID, State) = Helpers.ToInt(JwtID);
             if (State == Enum_Results.BREAK)
             {
                 return;
@@ -114,33 +114,28 @@ namespace Chatry.Hubs
 
         public static bool AuthHelper(string RequestedRoom, string JwtID)
         {
-            if (string.IsNullOrWhiteSpace(RequestedRoom) || !RequestedRoom.Contains('-'))
+            var (IDs, State) = Helpers.RoomDecoder(RequestedRoom);
+            if (State == Enum_Results.BREAK || Helpers.IsEmpty(JwtID) == Enum_Results.BREAK)
             {
                 return false;
             }
-            else
+
+            string ReqID0 = IDs[0];
+            string ReqID1 = IDs[1];
+            if (ReqID0 == JwtID || ReqID1 == JwtID)
             {
-                string[] ReqIDs = RequestedRoom.Split('-');
-                string ReqID0 = ReqIDs[0];
-                string ReqID1 = ReqIDs[1];
-                if (ReqID0 == JwtID || ReqID1 == JwtID)
-                {
-                    int reqID0 = Int32.Parse(ReqID0);
-                    int reqID1 = Int32.Parse(ReqID1);
-                    if (reqID0 < reqID1)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                else
+                var (reqID0, req_State1) = Helpers.ToInt(ReqID0);
+                var (reqID1, req_State2) = Helpers.ToInt(ReqID1);
+                if (req_State1 == Enum_Results.BREAK || req_State2 == Enum_Results.BREAK)
                 {
                     return false;
                 }
+                if (reqID0 < reqID1)
+                {
+                    return true;
+                }
             }
+            return false;
         }
 
 
