@@ -89,8 +89,39 @@ namespace Chatry.Services.Repositories
         }
 
 
+        public async Task<(string UserID, Enum_Results State)> Async_ADD_ReturnsID(User user)
+        {
+            if (Helpers.IsEmpty(user.Username) == Enum_Results.BREAK || Helpers.IsEmpty(user.Password) == Enum_Results.BREAK)
+            {
+                _logger.LogError("Helper_BREAK");
+                return (null, Enum_Results.BREAK);
+            }
 
-     public async Task<(Enum_Results enum_Results,int? ID)> User_is_Exists_ReturnsID(User Userinfo)
+            bool Exists = await _context.Users.AnyAsync(x => x.Username == user.Username);
+
+            if (Exists)
+            {
+                _logger.LogInformation("This Username already exists");
+                return (null, Enum_Results.BREAK);
+            }
+
+            try
+            {
+                user.Password = Hasher.Hash(user.Password);
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
+                int userid = user.UserID;
+                string id = userid.ToString();
+                return (id, Enum_Results.Successful);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical("PASSWORD HASHING PROBLEM", ex);
+                return (null, Enum_Results.BREAK);
+            }
+        }
+
+        public async Task<(Enum_Results enum_Results,int? ID)> User_is_Exists_ReturnsID(User Userinfo)
         {
             if (Helpers.IsEmpty(Userinfo.Username) == Enum_Results.BREAK || Helpers.IsEmpty(Userinfo.Password) == Enum_Results.BREAK)
             {

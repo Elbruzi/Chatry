@@ -31,7 +31,7 @@ namespace Chatry.Controllers
                 var messages = await _messagesRepository.Load_MessageQuery(RoomName, Count);
                 return Ok(messages);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }

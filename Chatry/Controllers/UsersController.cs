@@ -60,12 +60,13 @@ namespace Chatry.Controllers
                 Username = loginRequestModel.Username,
                 Password = loginRequestModel.Password
             };
-            var response = await _User_repository.Async_ADD(user);
-            switch (response)
+            var (response,State)= await _User_repository.Async_ADD_ReturnsID(user);
+            switch (State)
             {
                 case Enum_Results.Successful:
                     var LoginRequest = new LoginRequestModel
                     {
+                        UserID = response,
                         Username = user.Username,
                         Password = user.Password
                     };
@@ -82,6 +83,7 @@ namespace Chatry.Controllers
 
                 default: return NotFound();
             }
+
         }
 
 
